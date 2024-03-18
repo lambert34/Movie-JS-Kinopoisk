@@ -16,6 +16,18 @@ async function getMovies(url) {
     showMovies(respData);
 }
 
+// условие для цвета рейтинга
+
+function getClassByRate(vote) {
+    if (vote >= 7) {
+        return "green";
+    } else if (vote >= 5) {
+        return "orange";
+    } else {
+        return "red";
+    }
+}
+
 // функция для отрисовки всех карточек 
 
 function showMovies(data) {
