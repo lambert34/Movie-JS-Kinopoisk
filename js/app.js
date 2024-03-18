@@ -26,18 +26,20 @@ function showMovies(data) {
         movieEl.classList.add("movie");
         movieEl.innerHTML = `
         <div class="movie__cover-inner">
-        <img class="movie__cover"
-            src="${movie.posterUrlPreview}"
-            alt="${movie.nameRu}">
+        <img 
+        class="movie__cover"
+        src="${movie.posterUrlPreview}"
+        alt="${movie.nameRu}">
         <div class="movie__cover--darkened"></div>
     </div>
     <div class="movie__info">
         <div class="movie__title">${movie.nameRu}</div>
         <div class="movie__category">${movie.genres.map((genre) => ` ${genre.genre}`
         )}</div>
-        <div class="movie__average movie__average--green">9</div>
+        <div class="movie__average movie__average--${getClassByRate(movie.rating)}">${movie.rating}</div>
     </div>
         `;
         moviesEl.appendChild(movieEl);
     });
+    
 }
